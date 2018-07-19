@@ -12,6 +12,10 @@ from my_flask_extendsions.utils import flash_errors
 blueprint = Blueprint('public', __name__, static_folder='../static')
 
 
+
+
+
+
 @login_manager.user_loader
 def load_user(user_id):
     """Load user by ID."""
@@ -61,3 +65,8 @@ def about():
     """About page."""
     form = LoginForm(request.form)
     return render_template('public/about.html', form=form)
+
+
+
+
+
