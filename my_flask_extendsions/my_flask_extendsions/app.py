@@ -2,8 +2,8 @@
 """The app module, containing the app factory function."""
 from flask import Flask, render_template
 
-from my_flask_extendsions import commands, public, user
-from my_flask_extendsions.extensions import bcrypt, cache, csrf_protect, db, debug_toolbar, login_manager, migrate
+from my_flask_extendsions import commands, public, user, api
+from my_flask_extendsions.extensions import bcrypt, cache, csrf_protect, db, debug_toolbar, login_manager, migrate, api_manager
 from my_flask_extendsions.settings import ProdConfig
 
 
@@ -30,6 +30,7 @@ def register_extensions(app):
     csrf_protect.init_app(app)
     login_manager.init_app(app)
     debug_toolbar.init_app(app)
+    api_manager.init_app(app)
     migrate.init_app(app, db)
     return None
 
